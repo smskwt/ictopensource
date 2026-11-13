@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-Source & Android Strategy | HKDSE ICT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #F6F8FA;
+            background-image: radial-gradient(#CBD5E1 0.75px, transparent 0.75px);
+            background-size: 20px 20px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 24px -4px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+        }
+        .dark-bento {
+            background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+            box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.25);
+        }
+        .card-transition {
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .brand-pill.active {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #FFFFFF;
+            border-color: #34D399;
+            box-shadow: 0 6px 16px -4px rgba(16, 185, 129, 0.45);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-emerald-500 selection:text-white py-5 px-4 sm:py-8">
+
+    <main class="max-w-4xl mx-auto space-y-6">
+
+        <!-- COMPACT HEADER -->
+        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-1">
+            <div>
+                <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 text-[11px] font-bold tracking-wide uppercase mb-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    HKDSE ICT • 1-Min Visual Note
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+                    Open-Source Software &amp; Android
+                </h1>
+            </div>
+            <div class="text-xs font-medium text-slate-500 bg-white/80 px-3.5 py-2 rounded-xl border border-slate-200/80 shadow-sm self-start sm:self-center">
+                Tap switches below to compare <span class="font-bold text-slate-800">Android vs. Apple</span>
+            </div>
+        </header>
+
+        <!-- PART 1: OPEN-SOURCE VS PROPRIETARY -->
+        <section class="glass-card rounded-3xl border border-slate-200/80 p-5 sm:p-6 space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-xl bg-slate-900 text-white font-extrabold text-xs flex items-center justify-center shadow-sm">1</span>
+                    <div>
+                        <h2 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">Why Use Open-Source Software?</h2>
+                        <p class="text-xs text-slate-500">Compare Open Source Code vs. Closed Proprietary Code</p>
+                    </div>
+                </div>
+
+                <!-- Segmented Pill Switch -->
+                <div class="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200/80 self-start sm:self-auto">
+                    <button onclick="setMode('open')" id="btn-open" class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-white text-emerald-700 shadow-sm border border-slate-200/60 card-transition">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Open-Source (Android)
+                    </button>
+                    <button onclick="setMode('closed')" id="btn-closed" class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-800 card-transition">
+                        <span class="w-2 h-2 rounded-full bg-slate-400" id="dot-closed"></span>
+                        Closed Code (Apple iOS)
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3 Clean Bento Feature Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                <!-- Feature 1 -->
+                <div id="box-1" class="card-transition p-4 rounded-2xl bg-emerald-50/40 border border-emerald-200/70 flex flex-col justify-start space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span id="badge-1" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-700">01 • Development</span>
+                        <svg class="w-5 h-5 text-emerald-600" id="icon-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="title-1" class="font-extrabold text-slate-900 text-sm mb-1">Save Time &amp; Cost (Reuse Code)</h3>
+                        <p id="card-1-text" class="text-xs text-slate-600 leading-relaxed">
+                            <span class="font-bold text-emerald-700">Android:</span> Samsung &amp; Xiaomi reuse Google's free source code instead of building a new OS from zero.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div id="box-2" class="card-transition p-4 rounded-2xl bg-emerald-50/40 border border-emerald-200/70 flex flex-col justify-start space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span id="badge-2" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-700">02 • Design Control</span>
+                        <svg class="w-5 h-5 text-emerald-600" id="icon-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="title-2" class="font-extrabold text-slate-900 text-sm mb-1">High Flexibility &amp; Customization</h3>
+                        <p id="card-2-text" class="text-xs text-slate-600 leading-relaxed">
+                            <span class="font-bold text-emerald-700">Android:</span> Source code is open. Companies can freely modify it (e.g. Samsung One UI) without one vendor's control.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div id="box-3" class="card-transition p-4 rounded-2xl bg-emerald-50/40 border border-emerald-200/70 flex flex-col justify-start space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <span id="badge-3" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-700">03 • Maintenance</span>
+                        <svg class="w-5 h-5 text-emerald-600" id="icon-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="title-3" class="font-extrabold text-slate-900 text-sm mb-1">Public Testing &amp; Fast Bug Fixes</h3>
+                        <p id="card-3-text" class="text-xs text-slate-600 leading-relaxed">
+                            <span class="font-bold text-emerald-700">Android:</span> Global programmers inspect the source code, finding and fixing security bugs quickly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 2: GOOGLE'S ANDROID STRATEGY -->
+        <section class="dark-bento rounded-3xl border border-slate-800 p-5 sm:p-6 text-white space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs flex items-center justify-center shadow-sm">2</span>
+                    <div>
+                        <h2 class="text-base sm:text-lg font-extrabold text-white leading-tight">Why Does Google Give Android Away Free?</h2>
+                        <p class="text-xs text-slate-400">Strategy: "Free Car (Android OS), Paid Toll Roads (Google Services)"</p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full bg-white/10 text-emerald-300 border border-white/10 self-start sm:self-center">
+                    Win-Win Ecosystem
+                </span>
+            </div>
+
+            <!-- 3 Strategy Pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 space-y-1">
+                    <div class="text-xs font-extrabold text-emerald-400">1. Beat Apple iPhone</div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Free OS made Samsung &amp; Xiaomi join fast, stopping Apple from controlling all phones.</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 space-y-1">
+                    <div class="text-xs font-extrabold text-cyan-400">2. Free Hardware Upgrades</div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Partners share new code back for 5G, foldable screens &amp; multi-lens cameras.</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 space-y-1">
+                    <div class="text-xs font-extrabold text-amber-400">3. Earn From Apps &amp; Ads</div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Google earns billions from Search ads, YouTube &amp; 15–30% Play Store fees.</p>
+                </div>
+            </div>
+
+            <!-- Interactive Brand Simulator -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/60 border border-white/10 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span class="text-xs font-bold text-slate-300 flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        Click Phone Brands to Add Android Users:
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[11px] text-slate-400">Active Devices:</span>
+                        <span id="user-count" class="px-2.5 py-0.5 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-extrabold text-xs">1.8 Billion</span>
+                    </div>
+                </div>
+
+                <!-- Brand Logos / Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                    <button onclick="toggleBrand('samsung')" id="brand-samsung" class="brand-pill active flex flex-col items-center justify-center py-3 px-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-slate-400 card-transition cursor-pointer">
+                        <span class="text-sm font-black tracking-widest">SAMSUNG</span>
+                        <span class="text-[10px] opacity-80 mt-0.5">+1.1B phones</span>
+                    </button>
+
+                    <button onclick="toggleBrand('xiaomi')" id="brand-xiaomi" class="brand-pill active flex flex-col items-center justify-center py-3 px-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-slate-400 card-transition cursor-pointer">
+                        <span class="text-sm font-extrabold tracking-tight flex items-center gap-1">
+                            <span class="inline-flex items-center justify-center w-4 h-4 rounded bg-orange-500 text-white text-[9px] font-black">mi</span>
+                            Xiaomi
+                        </span>
+                        <span class="text-[10px] opacity-80 mt-0.5">+0.7B phones</span>
+                    </button>
+
+                    <button onclick="toggleBrand('sony')" id="brand-sony" class="brand-pill flex flex-col items-center justify-center py-3 px-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-slate-400 hover:border-slate-500 card-transition cursor-pointer">
+                        <span class="text-sm font-serif font-bold tracking-widest">SONY</span>
+                        <span class="text-[10px] opacity-80 mt-0.5">+0.2B phones</span>
+                    </button>
+
+                    <button onclick="toggleBrand('oppo')" id="brand-oppo" class="brand-pill flex flex-col items-center justify-center py-3 px-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-slate-400 hover:border-slate-500 card-transition cursor-pointer">
+                        <span class="text-sm font-extrabold tracking-wide">OPPO / vivo</span>
+                        <span class="text-[10px] opacity-80 mt-0.5">+1.0B phones</span>
+                    </button>
+                </div>
+
+                <!-- Live Revenue Dashboard Bar -->
+                <div class="grid grid-cols-3 gap-2.5 pt-1">
+                    <div class="p-3 rounded-xl bg-white/[0.04] border border-white/5 text-center">
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Android OS Cost</div>
+                        <div class="font-extrabold text-emerald-400 text-sm sm:text-base mt-0.5">$0 (Free)</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white/[0.04] border border-white/5 text-center">
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Google Ad Income</div>
+                        <div id="ad-rev" class="font-extrabold text-cyan-400 text-sm sm:text-base mt-0.5 transition-all">$90B / yr</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white/[0.04] border border-white/5 text-center">
+                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Play Store Fee</div>
+                        <div class="font-extrabold text-amber-400 text-sm sm:text-base mt-0.5">15% – 30%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function setMode(mode) {
+            const btnOpen = document.getElementById('btn-open');
+            const btnClosed = document.getElementById('btn-closed');
+            const dotClosed = document.getElementById('dot-closed');
+
+            const boxes = [document.getElementById('box-1'), document.getElementById('box-2'), document.getElementById('box-3')];
+            const badges = [document.getElementById('badge-1'), document.getElementById('badge-2'), document.getElementById('badge-3')];
+            const icons = [document.getElementById('icon-1'), document.getElementById('icon-2'), document.getElementById('icon-3')];
+
+            const t1 = document.getElementById('title-1');
+            const t2 = document.getElementById('title-2');
+            const t3 = document.getElementById('title-3');
+
+            const c1 = document.getElementById('card-1-text');
+            const c2 = document.getElementById('card-2-text');
+            const c3 = document.getElementById('card-3-text');
+
+            if (mode === 'open') {
+                btnOpen.className = "flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-white text-emerald-700 shadow-sm border border-slate-200/60 card-transition";
+                btnClosed.className = "flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-800 card-transition";
+                dotClosed.className = "w-2 h-2 rounded-full bg-slate-400";
+
+                boxes.forEach(b => b.className = "card-transition p-4 rounded-2xl bg-emerald-50/40 border border-emerald-200/70 flex flex-col justify-start space-y-1.5");
+                badges.forEach(bg => bg.className = "text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-700");
+                icons.forEach(ic => ic.setAttribute('class', 'w-5 h-5 text-emerald-600'));
+
+                t1.textContent = "Save Time & Cost (Reuse Code)";
+                t2.textContent = "High Flexibility & Customization";
+                t3.textContent = "Public Testing & Fast Bug Fixes";
+
+                c1.innerHTML = `<span class="font-bold text-emerald-700">Android:</span> Samsung &amp; Xiaomi reuse Google's free source code instead of building a new OS from zero.`;
+                c2.innerHTML = `<span class="font-bold text-emerald-700">Android:</span> Source code is open. Companies can freely modify it (e.g. Samsung One UI) without one vendor's control.`;
+                c3.innerHTML = `<span class="font-bold text-emerald-700">Android:</span> Global programmers inspect the source code, finding and fixing security bugs quickly.`;
+            } else {
+                btnClosed.className = "flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-white text-sky-700 shadow-sm border border-slate-200/60 card-transition";
+                btnOpen.className = "flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-500 hover:text-slate-800 card-transition";
+                dotClosed.className = "w-2 h-2 rounded-full bg-sky-500";
+
+                boxes.forEach(b => b.className = "card-transition p-4 rounded-2xl bg-sky-50/50 border border-sky-200/70 flex flex-col justify-start space-y-1.5");
+                badges.forEach(bg => bg.className = "text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-lg bg-sky-100 text-sky-700");
+                icons.forEach(ic => ic.setAttribute('class', 'w-5 h-5 text-sky-600'));
+
+                t1.textContent = "Exclusive Hardware & OS Match";
+                t2.textContent = "Unified & Consistent Experience";
+                t3.textContent = "Official Support & Trade Secrets";
+
+                c1.innerHTML = `<span class="font-bold text-sky-700">Apple iOS:</span> Apple builds iOS only for iPhone, optimizing speed and battery life specifically for its own chips.`;
+                c2.innerHTML = `<span class="font-bold text-sky-700">Apple iOS:</span> Proprietary software (closed code). Apple controls the interface so every iPhone works the exact same way.`;
+                c3.innerHTML = `<span class="font-bold text-sky-700">Apple iOS:</span> Source code is kept secret to protect Apple's designs, with official security updates directly from Apple.`;
+            }
+        }
+
+        const activeBrands = { samsung: true, xiaomi: true, sony: false, oppo: false };
+        const brandStats = {
+            samsung: { users: 1.1, rev: 55 },
+            xiaomi: { users: 0.7, rev: 35 },
+            sony: { users: 0.2, rev: 12 },
+            oppo: { users: 1.0, rev: 48 }
+        };
+
+        function toggleBrand(brand) {
+            activeBrands[brand] = !activeBrands[brand];
+            const btn = document.getElementById(`brand-${brand}`);
+            if (activeBrands[brand]) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+            recalcBrands();
+        }
+
+        function recalcBrands() {
+            let totalUsers = 0;
+            let totalRev = 0;
+            for (const key in activeBrands) {
+                if (activeBrands[key]) {
+                    totalUsers += brandStats[key].users;
+                    totalRev += brandStats[key].rev;
+                }
+            }
+            document.getElementById('user-count').textContent = totalUsers === 0 ? "0 Devices" : `${totalUsers.toFixed(1)} Billion`;
+            document.getElementById('ad-rev').textContent = totalRev === 0 ? "$0 / yr" : `$${totalRev}B / yr`;
+        }
+        recalcBrands();
+    </script>
+</body>
+</html>
